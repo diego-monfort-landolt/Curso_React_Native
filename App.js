@@ -5,18 +5,21 @@ const splash = require('./assets/compt2.jpg');
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hi Diego!</Text>
-      <Text>Esto es un test...</Text>
-      <Image source={splash} 
+    <View style={styles.container}> 
+    <Image blurRadius={5}  source={splash} 
       style={{ 
-        width: 100, 
-        height: 100, 
+        width: 400, 
+        height: 150, 
         borderRadius: 10,
         boxShadow: '#000',
-        marginTop: 20,
+        marginBottom: 20,
+        resizeMode: 'cover'
         }} 
         />
+        <Image source={{uri: 'https://avatars.githubusercontent.com/u/75099835?v=4'}} style={{width: 100, height: 80 }} /> 
+      <Text>Hi Diego!</Text>
+      <Text>Esto es un test...</Text>
+     
       <StatusBar style="auto" />
     </View>
   );
