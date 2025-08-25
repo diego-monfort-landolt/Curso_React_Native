@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native'; // <-- Image hinzugefügt
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const splash = require('./assets/compt2.jpg');
 
