@@ -15,20 +15,18 @@ export default function App() {
     getLatestGames().then((data) => setGame(data))
   }, [])
 
-  return (
-    <View style={styles.container}>
-      {game.slice(0, 5).map((g, index) => (
-        <View key={index} style={{ marginTop: 20, alignItems: "center" }}>
-          <Image
-            source={{ uri: g.image }}
-            style={{ width: 150, height: 100 }}
-          />
-          <Text style={{ color: "white" }}>{g.title}</Text>
-          <Text style={{ color: "gray" }}>{g.releaseDate}</Text>
-        </View>
-      ))}
-    </View>
-  )
+ return (
+  <View style={styles.container}>
+    {game.slice(0, 5).map((g, index) => (
+      <View key={index} style={styles.card}>
+        <Image source={{ uri: g.image }} style={styles.image} />
+        <Text style={styles.title}>{g.title}</Text>
+        <Text style={styles.date}>{g.releaseDate}</Text>
+      </View>
+    ))}
+  </View>
+)
+
 }
 
 const styles = StyleSheet.create({
@@ -38,4 +36,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  card: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  image: {
+    width: 150,
+    height: 100,
+  },
+  title: {
+    color: "white",
+    marginTop: 10,
+  },
+  date: {
+    color: "gray",
+  },
 })
+
