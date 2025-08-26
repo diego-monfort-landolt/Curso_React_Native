@@ -21,6 +21,7 @@ export default function App() {
       <View key={index} style={styles.card}>
         <Image source={{ uri: g.image }} style={styles.image} />
         <Text style={styles.title}>{g.title}</Text>
+         <Text style={styles.description}>{g.description}</Text>
         <Text style={styles.date}>{g.releaseDate}</Text>
       </View>
     ))}
@@ -47,6 +48,12 @@ const styles = StyleSheet.create({
   title: {
     color: "white",
     marginTop: 10,
+  },
+  description: {
+    color: "lightgray",
+    marginTop: 5,
+    textAlign: "center",
+    paddingHorizontal: 30,
   },
   date: {
     color: "gray",
