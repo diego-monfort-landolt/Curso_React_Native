@@ -1,14 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import NotesScreen from './src/screens/NotesScreen/notes';
+// import { NotesScreen, NoteScreen, CategoriesScreen, SettingsScreen } from './src/screens/screens';
+import { StatusBar } from "react-native";
+import AppNavigator from "./src/navigation/AppNavigator";
 
 
 export default function App() {
  
 
   return (
-    <NotesScreen />
+    <React.Fragment>
+        <StatusBar barStyle="light-content" />
+        <AppNavigator />
+      </React.Fragment>
   );
 }
 
