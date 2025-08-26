@@ -5,6 +5,8 @@ import {
   Text,
   View,
   Image,
+  ScrollView,
+  SafeAreaView
 } from "react-native"
 import { getLatestGames } from "./lib/freeGamesFetcher"
 
@@ -17,14 +19,21 @@ export default function App() {
 
  return (
   <View style={styles.container}>
-    {game.slice(0, 5).map((g, index) => (
+    <StatusBar style="light" />
+    {/* <SafeAreaView style={{ margin: '24' }}/> solo para ios para android no funciona  */}
+
+    <ScrollView>
+      {game.slice(0, 5).map((g, index) => (
       <View key={index} style={styles.card}>
         <Image source={{ uri: g.image }} style={styles.image} />
         <Text style={styles.title}>{g.title}</Text>
          <Text style={styles.description}>{g.description}</Text>
         <Text style={styles.date}>{g.releaseDate}</Text>
+        
       </View>
     ))}
+    </ScrollView>
+    
   </View>
 )
 
@@ -36,9 +45,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
+    
   },
   card: {
-    marginTop: 20,
+    marginTop: 60,
     alignItems: "center",
   },
   image: {
@@ -46,8 +56,12 @@ const styles = StyleSheet.create({
     height: 100,
   },
   title: {
-    color: "white",
-    marginTop: 10,
+    color: "red",
+    fontFamily: "Arial",
+    fontWeight: "bold",
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    marginTop: 20,
   },
   description: {
     color: "lightgray",
