@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
-import { View, ScrollView, ActivityIndicator, FlatList } from "react-native"
+import { View, ActivityIndicator, FlatList } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
-import GameCard from "./GameCard"
+import AnimatedGameCard from "./GameCard"
 import Logo from "./Logo"
 
 export default function Main({ g, index }) {
@@ -23,9 +23,9 @@ export default function Main({ g, index }) {
       {game.length === 0 ? (
         <ActivityIndicator color={'#red'} size={'large'} />) : (
         <FlatList
-          data={game.slice(0, 20)} // Zeigt nur die ersten 10 Einträge
+          data={game.slice(0, 50)} // Zeigt nur die ersten 10 Einträge
           keyExtractor={(g) => g.index}
-          renderItem={({ item, index }) => <GameCard key={index} g={item} />}
+          renderItem={({ item, index }) => <AnimatedGameCard  g={item} index={index} />}
         />
       )}
     </View>
