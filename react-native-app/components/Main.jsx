@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar"
 import { useEffect, useState } from "react"
 
 import {
@@ -10,20 +9,20 @@ import {
 
 } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 
-export  function Main() {
+export default function Main() {
   const [game, setGame] = useState([])
+  const insets = useSafeAreaInsets()
 
   useEffect(() => {
     getLatestGames().then((data) => setGame(data))
   }, [])
 
  return (
- <>
-    {/* <SafeAreaView style={{ margin: '24' }}/> solo para ios para android no funciona  */}
-
-    <ScrollView>
-      {game.slice(0, 5).map((g, index) => (
+  <View style={{ paddingTop: insets.top, paddingBlock: insets.bottom }}> 
+  <ScrollView>
+      {game.slice(0, 17).map((g, index) => (
       <View key={index} style={styles.card}>
         <Image source={{ uri: g.image }} style={styles.image} />
         <Text style={styles.title}>{g.title}</Text>
@@ -32,19 +31,11 @@ export  function Main() {
       </View>
     ))}
     </ScrollView>
- </>
-)
-
+  </View>
+)   
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    alignItems: "center",
-    justifyContent: "center",
-    
-  },
   card: {
     marginTop: 60,
     alignItems: "center",
