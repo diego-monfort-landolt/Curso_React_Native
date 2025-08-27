@@ -16,11 +16,10 @@ export default function Main({ g, index }) {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <View style={{ height: 20 }}>
+      <View style={{ height: 20, margin: 2 }}>
         <Logo width={100} height={100} style={{ alignSelf: "left" }} />
       </View>
 
-      
       {game.length === 0 ? (
         <ActivityIndicator color={'#red'} size={'large'} />) : (
         <FlatList

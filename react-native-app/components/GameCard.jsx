@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import {
   StyleSheet,
   Text,
@@ -15,7 +16,27 @@ export default function GameCard({ g, index }) {
       <Text style={styles.date}>{g.releaseDate}</Text>
     </View>
   )
-}
+};
+
+export function AnimatedGameCard({ g, index }) {
+  const opacity = useRef(new Animated.value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 500,
+      delay: index * 250,
+      useNativeDriver: true,
+    }).start();
+  }, [opacity, index])
+
+  return (
+    <Animated.View style={{ opacity }}>
+      <GameCard g={g} index={index} />
+    </Animated.View>
+  );
+};
+
 
 const styles = StyleSheet.create({
   card: {
