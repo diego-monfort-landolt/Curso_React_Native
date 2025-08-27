@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar"
 import { useEffect, useState } from "react"
-import Constants from "expo-constants"
+
 import {
   StyleSheet,
   Text,
@@ -11,7 +11,7 @@ import {
 } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
 
-export  function App() {
+export  function Main() {
   const [game, setGame] = useState([])
 
   useEffect(() => {
@@ -20,7 +20,6 @@ export  function App() {
 
  return (
  <>
-   <StatusBar style="light" />
     {/* <SafeAreaView style={{ margin: '24' }}/> solo para ios para android no funciona  */}
 
     <ScrollView>
@@ -29,15 +28,11 @@ export  function App() {
         <Image source={{ uri: g.image }} style={styles.image} />
         <Text style={styles.title}>{g.title}</Text>
          <Text style={styles.description}>{g.description}</Text>
-        <Text style={styles.date}>{g.releaseDate}</Text>
-        
+        <Text style={styles.date}>{g.releaseDate}</Text>    
       </View>
     ))}
     </ScrollView>
-    
  </>
-  
-  
 )
 
 }
