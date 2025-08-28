@@ -17,7 +17,7 @@ export default function Main({ g, index }) {
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <View style={{ height: 20, margin: 2 }}>
-        <Logo width={100} height={100} style={{ alignSelf: "left" }} />
+        <Logo width={80} height={80} style={{ alignSelf: "left" }} />
       </View>
 
       {game.length === 0 ? (

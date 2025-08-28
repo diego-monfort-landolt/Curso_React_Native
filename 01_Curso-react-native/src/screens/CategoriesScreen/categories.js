@@ -8,7 +8,7 @@ import {
   FlatList,
   TouchableOpacity
 } from "react-native";
-import { HR, ColorPicker } from "ReactNativeNotas/src/components";
+import { HR, ColorPicker } from "../../components/components";
 import CategoryItem from "./CategoryItem";
 
 import basicStyles from '../../styles/basicStyles'

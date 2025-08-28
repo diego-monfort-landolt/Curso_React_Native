@@ -1,6 +1,4 @@
-import FAB from "./FAB";
-import HR from "./HR";
-import ColorPicker from "./ColorPicker";
-import CategoryPicker from "./CategoryPicker";
-
-export { FAB, HR, ColorPicker, CategoryPicker };
+export { default as HR } from './HR/hr';
+export { default as ColorPicker } from './ColorPicker/colorPicker';
+export { default as CategoryPicker } from './CategoryPicker/categoryPicker';
+export { default as FAB } from './FAB/FAB';

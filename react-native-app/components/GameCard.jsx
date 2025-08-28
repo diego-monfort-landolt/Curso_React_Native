@@ -40,7 +40,7 @@ export function AnimatedGameCard({ g, index }) {
 
 const styles = StyleSheet.create({
   card: {
-    marginTop: 60,
+    marginTop: 60, 
     alignItems: "center",
   },
   image: {
@@ -48,12 +48,14 @@ const styles = StyleSheet.create({
     height: 100,
   },
   title: {
-    color: "red",
+    color: "white",
     fontFamily: "Arial",
     fontWeight: "bold",
+    fontSize: 20,
     borderBottomColor: "white",
     borderBottomWidth: 1,
     marginTop: 20,
+    elevation: 5,
   },
   description: {
     color: "lightgray",
