@@ -13,6 +13,7 @@ export default function GameCard({ g, index }) {
       <Image source={{ uri: g.image }} style={styles.image} />
       <Text style={styles.title}>{g.title}</Text>
       <Text style={styles.description}>{g.description}</Text>
+      <Text style={styles.slug}>{g.slug}</Text>
       <Text style={styles.date}>{g.releaseDate}</Text>
     </View>
   )
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "Arial",
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 25,
     borderBottomColor: "white",
     borderBottomWidth: 1,
     marginTop: 20,
@@ -59,6 +60,13 @@ const styles = StyleSheet.create({
   },
   description: {
     color: "lightgray",
+    marginTop: 5,
+    fontSize: 18,
+    textAlign: "center",
+    paddingHorizontal: 30,
+  },
+  slug: {
+    color: "cyan",
     marginTop: 5,
     textAlign: "center",
     paddingHorizontal: 30,
