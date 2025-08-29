@@ -19,12 +19,12 @@ export default function Main({ g, index }) {
       <View style={{ height: 20, margin: 2 }}>
         <Logo width={80} height={80} style={{ alignSelf: "left" }} />
       </View>
-
       {game.length === 0 ? (
-        <ActivityIndicator color={'#red'} size={'large'} />) : (
+        <ActivityIndicator color={'red'} size={'large'} />) : (
         <FlatList
-          data={game.slice(0, 50)} // Zeigt nur die ersten 10 Einträge
-          keyExtractor={(g) => g.index}
+          data={game.slice(0, 50)} 
+          keyExtractor={(game) => game.id}
+          marginTop={40}
           renderItem={({ item, index }) => <AnimatedGameCard  g={item} index={index} />}
         />
       )}
