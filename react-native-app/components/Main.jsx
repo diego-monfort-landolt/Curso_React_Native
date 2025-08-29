@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-
 import { View, ActivityIndicator, FlatList } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
@@ -9,7 +8,6 @@ import Logo from "./Logo"
 export default function Main({ g, index }) {
   const [game, setGame] = useState([])
   const insets = useSafeAreaInsets()
-
   useEffect(() => {
     getLatestGames().then((data) => setGame(data))
   }, [])
