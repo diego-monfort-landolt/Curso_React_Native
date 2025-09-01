@@ -16,7 +16,6 @@ export default function App() {
     </SafeAreaProvider>
   )
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
