@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "expo-router"
+import { Pressable, Text } from "react-native";
 import { View, ActivityIndicator, FlatList } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
@@ -15,13 +16,17 @@ export default function Main({ g, index }) {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
+      <Link href="/about" asChild>
+        <Pressable className="mt-40 p-4 m-4 z-50 relative bg-white rounded-lg shadow">
+          <Text className="text-xl text-blue-500">Dale iir al about</Text>
+        </Pressable>
+      </Link>
+
       <View style={{ height: 20, margin: 2 }}>
+
         <View className="absolute top-1 right-4 bg-black/60 p-2 rounded-lg">
           <Logo width={48} height={48} />
         </View>
-
-        <Link href="./about" className="text-blue-500" >iir al about
-        </Link>
       </View>
 
       {game.length === 0 ? (
