@@ -22,7 +22,7 @@ export default function Main({ g, index }) {
         <FlatList
           data={game.slice(0, 50)} 
           keyExtractor={(game) => game.id}
-          marginTop={40}
+          marginTop={60}
           renderItem={({ item, index }) => <AnimatedGameCard key={index} g={item} index={index} />}
         />
       )}

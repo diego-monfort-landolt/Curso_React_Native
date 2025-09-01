@@ -10,16 +10,29 @@ import Score from "./Score";
 export default function GameCard({ g, index }) {
   return (
 
-    <View key={index} >
-    
-      <View className="flex-row gap-4"> 
-      <Image source={{ uri: g.image }} style={styles.image} />
-      <Text className="mb-1" style={styles.title}>{g.title}</Text>
-      <Text className="mb-2" style={styles.description}>{g.description}</Text>
-      <Text style={styles.slug}>{g.slug}</Text>
-      {/* <Score score={g.date} maxScore={10} /> */}
-      <Text style={styles.date}>{g.releaseDate}</Text>
-      </View>
+    <View key={index} className="bg-slate-800 rounded-xl overflow-hidden mb-4">
+     <View className="flex-row items-center p-4 gap-4">
+    <Image
+      source={{ uri: g.image }}
+      className="w-24 h-24 rounded-lg"
+      resizeMode="cover"
+    />
+
+    <View className="flex-2">
+      <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
+        {g.title}
+      </Text>
+      <Text className="text-sm text-white mb-2  max-w-[220px] break-words" numberOfLines={5}>
+        {g.description.slice(0, 50)}...
+      </Text>
+      <Text className="text-xs text-gray-400 mb-1" numberOfLines={1}>
+        {g.slug}
+      </Text>
+      <Text className="text-xs text-gray-500" numberOfLines={1}>
+        {g.releaseDate}
+      </Text>
+    </View>
+  </View>
      
     </View>
   )

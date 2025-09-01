@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-
+// el componente se puede añadir a cambiar la api
 export default function Score({ score, maxScore }) {
   const getColors = () => {
     const percentage = (score / maxScore) * 100;
