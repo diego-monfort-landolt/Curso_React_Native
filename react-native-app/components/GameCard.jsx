@@ -5,16 +5,22 @@ import {
   View,
   Image,
 } from "react-native"
+import Score from "./Score";
 
 export default function GameCard({ g, index }) {
   return (
 
-    <View key={index} style={styles.card}>
+    <View key={index} >
+    
+      <View className="flex-row gap-4"> 
       <Image source={{ uri: g.image }} style={styles.image} />
-      <Text style={styles.title}>{g.title}</Text>
-      <Text style={styles.description}>{g.description}</Text>
+      <Text className="mb-1" style={styles.title}>{g.title}</Text>
+      <Text className="mb-2" style={styles.description}>{g.description}</Text>
       <Text style={styles.slug}>{g.slug}</Text>
+      {/* <Score score={g.date} maxScore={10} /> */}
       <Text style={styles.date}>{g.releaseDate}</Text>
+      </View>
+     
     </View>
   )
 };
