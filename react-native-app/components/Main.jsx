@@ -23,7 +23,7 @@ export default function Main({ g, index }) {
           data={game.slice(0, 50)} 
           keyExtractor={(game) => game.id}
           marginTop={40}
-          renderItem={({ item, index }) => <AnimatedGameCard  g={item} index={index} />}
+          renderItem={({ item, index }) => <AnimatedGameCard key={index} g={item} index={index} />}
         />
       )}
     </View>
