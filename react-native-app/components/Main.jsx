@@ -16,11 +16,14 @@ export default function Main({ g, index }) {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <Link href="../app/about" asChild>
+      <Pressable className="absolute top-10 left-4 bg-black/60 p-2 rounded-lg z-50">  
+      <Link href="/about" asChild>
         <Pressable className="mt-40 p-4 m-4 z-50 relative bg-white rounded-lg shadow">
           <Text className="text-xl text-blue-500">Dale iir al about</Text>
         </Pressable>
       </Link>
+      </Pressable>
+    
 
       <View style={{ height: 20, margin: 2 }}>
 
