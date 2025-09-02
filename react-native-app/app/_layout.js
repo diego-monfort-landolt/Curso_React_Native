@@ -1,6 +1,5 @@
 import  Slot  from "expo-router";
-import { View, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 import  Main from "../components/Main";
 
 export default function Layout() {
