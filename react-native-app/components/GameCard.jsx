@@ -5,7 +5,6 @@ import {
   View,
   Image,
 } from "react-native"
-import Score from "./Score";
 
 export default function GameCard({ g, index }) {
   return (
@@ -17,7 +16,6 @@ export default function GameCard({ g, index }) {
       className="w-24 h-24 rounded-lg"
       resizeMode="cover"
     />
-
     <View className="flex-2">
       <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
         {g.title}
@@ -58,7 +56,7 @@ export function AnimatedGameCard({ g, index }) {
 };
 
 
-const styles = StyleSheet.create({
+const  styles = StyleSheet.create({
   card: {
     marginTop: 60, 
     alignItems: "center",

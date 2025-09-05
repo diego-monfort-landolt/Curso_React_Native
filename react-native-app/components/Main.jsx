@@ -6,6 +6,7 @@ import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import AnimatedGameCard from "./GameCard"
 import Logo from "./Logo"
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function Main({ g, index }) {
   const [game, setGame] = useState([])
@@ -15,26 +16,28 @@ export default function Main({ g, index }) {
   }, [])
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}> 
-      <Pressable className="absolute top-10 left-4 bg-black/60 p-2 rounded-lg z-50">  
-      <Link href="/about" asChild>
-        <Pressable className="mt-40 p-4 m-4 z-50 relative bg-white rounded-lg shadow">
-          <Text className="text-xl text-blue-500">Dale iir al about</Text>
+    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
+
+      <Link href='/about' asChild>
+        <Pressable className="absolute top-0 left-4 p-2 rounded-lg bg-black/60">
+          <AntDesign name="user" size={24} color="white" />
         </Pressable>
       </Link>
-      </Pressable>
-    
 
       <View style={{ height: 20, margin: 2 }}>
 
-        <View className="absolute top-1 right-4 bg-black/60 p-2 rounded-lg">
+        <View className="absolute top-5 left-4 bg-black/60 p-2 rounded-lg ">
           <Logo width={48} height={48} />
         </View>
+
       </View>
+
+
 
       {game.length === 0 ? (
         <ActivityIndicator color={'red'} size={'large'} />) : (
         <FlatList
+          className="m-4"
           data={game.slice(0, 50)}
           keyExtractor={(item) => item.id}
           marginTop={30}
