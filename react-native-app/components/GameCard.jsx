@@ -30,8 +30,7 @@ export default function GameCard({ g, index }) {
         {g.releaseDate}
       </Text>
     </View>
-  </View>
-     
+  </View>   
     </View>
   )
 };
