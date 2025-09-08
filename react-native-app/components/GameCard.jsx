@@ -12,22 +12,22 @@ import { styled } from "nativewind";
 const StyledPresasable = styled(Pressable);
 
 
-export default function GameCard({ g, index }) {
+export default function GameCard({ g }) {
   return (
-    <Link href={`/${g.slug}`} asChild>
-      <StyledPresasable className={`active:opacity-50 `}>
-        <View key={index} className="bg-slate-800 rounded-xl overflow-hidden mb-4">
-          <View className="flex-row items-center p-4 gap-4">
+    <Link href={`/${g.slug}`} style={styles.card} asChild>
+      <StyledPresasable className={`active:opacity-50 border border-black active:border-white bg-gray-500/10 rounded-xl p4 `}>
+        <View key={g.slug} className="flex-row gap-4 ">
+         
             <Image
               source={{ uri: g.image }}
-              className="w-24 h-24 rounded-lg"
+              style={styles.image}
               resizeMode="cover"
             />
-            <View className="flex-2">
+            <View className="flex-shrink">
               <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
                 {g.title}
               </Text>
-              <Text className="text-sm text-white mb-2  max-w-[220px] break-words" numberOfLines={5}>
+              <Text className="text-sm text-white mb-2  max-w-[220px] break-words" style={styles.title} numberOfLines={5}>
                 {g.description.slice(0, 50)}...
               </Text>
               <Text className="text-xs text-gray-400 mb-1" numberOfLines={1}>
@@ -38,7 +38,7 @@ export default function GameCard({ g, index }) {
               </Text>
             </View>
           </View>
-        </View>
+       
 
       </StyledPresasable>
 
@@ -55,7 +55,7 @@ export function AnimatedGameCard({ g, index }) {
   useEffect(() => {
     Animated.timing(opacity, {
       toValue: 1,
-      duration: 500,
+      duration: 1000,
       delay: index * 250,
       useNativeDriver: true,
     }).start();
@@ -63,7 +63,7 @@ export function AnimatedGameCard({ g, index }) {
 
   return (
     <Animated.View style={{ opacity }}>
-      <GameCard g={g} index={index} />
+      <GameCard g={g} />
     </Animated.View>
   );
 };
@@ -72,21 +72,19 @@ export function AnimatedGameCard({ g, index }) {
 const styles = StyleSheet.create({
   card: {
     marginTop: 60,
+     marginBottom: 42,
     alignItems: "center",
   },
   image: {
-    width: 150,
-    height: 100,
+    width: 107,
+    height: 147,
+    borderRadius: 10,
   },
   title: {
-    color: "white",
-    fontFamily: "Arial",
+     fontSize: 20,
     fontWeight: "bold",
-    fontSize: 25,
-    borderBottomColor: "white",
-    borderBottomWidth: 1,
-    marginTop: 20,
-    elevation: 5,
+    color: "#fff",
+    marginTop: 10,
   },
   description: {
     color: "lightgray",
