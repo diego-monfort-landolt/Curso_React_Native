@@ -5,8 +5,10 @@ import { View, ActivityIndicator, FlatList } from "react-native"
 import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import AnimatedGameCard from "./GameCard"
-import Logo from "./Logo"
+import { styled } from "nativewind";
 import { InfoIcon } from "./Icons"
+
+const StyledPresasable = styled(Pressable);
 
 export default function Main({ g, index }) {
   const [game, setGame] = useState([])
@@ -15,18 +17,21 @@ export default function Main({ g, index }) {
     getLatestGames().then((data) => setGame(data))
   }, [])
 
+
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <Link href='/about' asChild>
-        <Pressable className="absolute top-9 bottom-9 left-4 p-2 rounded-lg bg-black/60">
-          <InfoIcon />
-        </Pressable>
+        <StyledPresasable className={`active:opacity-50 absolute top-5 left-4 bg-black/60 p-2 rounded-lg `}>
+         <InfoIcon />
+        </StyledPresasable>
+         
+        
       </Link>
-      <View style={{ height: 20, margin: 2 }}>
+      {/* <View style={{ height: 20, margin: 2 }}>
         <View className="absolute top-5 left-4 bg-black/60 p-2 rounded-lg ">
           <Logo width={48} height={48} />
         </View>
-      </View>
+      </View> */}
       {game.length === 0 ? (
         <ActivityIndicator color={'red'} size={'large'} />) : (
         <FlatList

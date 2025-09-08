@@ -4,34 +4,48 @@ import {
   Text,
   View,
   Image,
+  Pressable,
 } from "react-native"
+import { Link } from "expo-router"
+import { styled } from "nativewind";
+
+const StyledPresasable = styled(Pressable);
+
 
 export default function GameCard({ g, index }) {
   return (
-
-    <View key={index} className="bg-slate-800 rounded-xl overflow-hidden mb-4">
-      <View className="flex-row items-center p-4 gap-4">
-        <Image
-          source={{ uri: g.image }}
-          className="w-24 h-24 rounded-lg"
-          resizeMode="cover"
-        />
-        <View className="flex-2">
-          <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
-            {g.title}
-          </Text>
-          <Text className="text-sm text-white mb-2  max-w-[220px] break-words" numberOfLines={5}>
-            {g.description.slice(0, 50)}...
-          </Text>
-          <Text className="text-xs text-gray-400 mb-1" numberOfLines={1}>
-            {g.slug}
-          </Text>
-          <Text className="text-xs text-gray-500" numberOfLines={1}>
-            {g.releaseDate}
-          </Text>
+    <Link href={`/${g.slug}`} asChild>
+      <StyledPresasable className={`active:opacity-50 `}>
+        <View key={index} className="bg-slate-800 rounded-xl overflow-hidden mb-4">
+          <View className="flex-row items-center p-4 gap-4">
+            <Image
+              source={{ uri: g.image }}
+              className="w-24 h-24 rounded-lg"
+              resizeMode="cover"
+            />
+            <View className="flex-2">
+              <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
+                {g.title}
+              </Text>
+              <Text className="text-sm text-white mb-2  max-w-[220px] break-words" numberOfLines={5}>
+                {g.description.slice(0, 50)}...
+              </Text>
+              <Text className="text-xs text-gray-400 mb-1" numberOfLines={1}>
+                {g.slug}
+              </Text>
+              <Text className="text-xs text-gray-500" numberOfLines={1}>
+                {g.releaseDate}
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
-    </View>
+
+      </StyledPresasable>
+
+
+
+    </Link>
+
   )
 };
 
