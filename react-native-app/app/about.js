@@ -1,13 +1,13 @@
 import { Text, ScrollView, Pressable } from "react-native"
 import { Link } from "expo-router"
-import AntDesign from "@expo/vector-icons/AntDesign"
+import { HomeIcon } from "../components/Icons"
 
 export default function About() {
   return (
     <ScrollView>
       <Link className="text-xl mt-24 text-blue-500" href="/" asChild>
         <Pressable>
-          <AntDesign name="home" size={24} color="black" />
+          <HomeIcon />
         </Pressable>
       </Link>
 

@@ -6,7 +6,7 @@ import { getLatestGames } from "../lib/freeGamesFetcher"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import AnimatedGameCard from "./GameCard"
 import Logo from "./Logo"
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { InfoIcon } from "./Icons"
 
 export default function Main({ g, index }) {
   const [game, setGame] = useState([])
@@ -18,8 +18,8 @@ export default function Main({ g, index }) {
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <Link href='/about' asChild>
-        <Pressable className="absolute top-0 left-4 p-2 rounded-lg bg-black/60">
-          <AntDesign name="user" size={24} color="white" />
+        <Pressable className="absolute top-9 bottom-9 left-4 p-2 rounded-lg bg-black/60">
+          <InfoIcon />
         </Pressable>
       </Link>
       <View style={{ height: 20, margin: 2 }}>
