@@ -14,9 +14,9 @@ const StyledPresasable = styled(Pressable);
 
 export default function GameCard({ g }) {
   return (
-    <Link href={`/${g.slug}`} style={styles.card} asChild>
-      <StyledPresasable className={`active:opacity-50 border border-black active:border-white bg-gray-500/10 rounded-xl p4 `}>
-        <View key={g.slug} className="flex-row gap-4 ">
+    <Link href={`/${g.slug}`}  asChild>
+      <StyledPresasable className={`active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4 `}>
+        <View key={g.item} className="flex-row gap-4 ">
          
             <Image
               source={{ uri: g.image }}
@@ -24,6 +24,7 @@ export default function GameCard({ g }) {
               resizeMode="cover"
             />
             <View className="flex-shrink">
+
               <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
                 {g.title}
               </Text>
@@ -71,7 +72,6 @@ export function AnimatedGameCard({ g, index }) {
 
 const styles = StyleSheet.create({
   card: {
-    marginTop: 60,
      marginBottom: 42,
     alignItems: "center",
   },

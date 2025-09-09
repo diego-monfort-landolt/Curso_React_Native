@@ -10,7 +10,7 @@ import { InfoIcon } from "./Icons"
 
 const StyledPresasable = styled(Pressable);
 
-export default function Main({ g, index }) {
+export default function Main({ g }) {
   const [game, setGame] = useState([])
   const insets = useSafeAreaInsets()
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Main({ g, index }) {
           data={game.slice(0, 50)}
           keyExtractor={(item) => item.id}
           marginTop={30}
-          renderItem={({ item }) => <AnimatedGameCard key={index} g={item} />}
+          renderItem={({ item }) => <AnimatedGameCard key={item} g={item} />}
         />
       )}
     </View>
