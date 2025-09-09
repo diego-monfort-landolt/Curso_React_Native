@@ -21,8 +21,8 @@ export default function HistoryScreen() {
   };
 
   return (
-    <View className="flex-1 bg-gray-50 p-6">
-      <Text className="text-3xl font-extrabold text-gray-800 mb-6">Meine Aktivitäten</Text>
+    <View className="flex-1 bg-white p-4">
+      <Text className="text-2xl font-bold mb-4">Meine Aktivitäten</Text>
       <FlatList
         data={activities}
         keyExtractor={(_, i) => i.toString()}
