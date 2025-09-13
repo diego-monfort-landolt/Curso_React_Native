@@ -1,9 +1,9 @@
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// import HistoryScreen from "./screens/HistoryScreen";
-// import HomeScreen from "./screens/HomeScreen";
-// import TrackerScreen from "./screens/TrackerScreen";
+// import HistoryScreen from "../screens/HistoryScreen";
+// import HomeScreen from "../screens/HomeScreen";
+// import TrackerScreen from "../screens/TrackerScreen";
 
 // const Stack = createNativeStackNavigator();
 

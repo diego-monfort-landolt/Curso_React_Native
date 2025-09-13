@@ -1,6 +1,6 @@
 {
   "name": "my-tracker-app",
-  "Slot": "expo-router/entry",
+  "_layout": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
