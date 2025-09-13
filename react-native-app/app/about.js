@@ -3,6 +3,9 @@ import {
   ScrollView,
   Pressable,
   Image,
+  Linking,
+  Alert,
+  View,
   TouchableOpacity,
 } from "react-native"
 import { Link } from "expo-router"
@@ -41,9 +44,22 @@ export default function About() {
         veniam, quis lorem
       </Text>
       <TouchableOpacity
-        onPress={() =>
-          Linking.openURL("https://pixabay.com/de/images/search/strand/")
-        }
+        onPress={() => {
+          Alert.alert(
+            "Seite öffnen",
+            "Möchtest du wirklich die Originalseite besuchen?",
+            [
+              { text: "Abbrechen", style: "cancel" },
+              {
+                text: "Ja",
+                onPress: () =>
+                  Linking.openURL(
+                    "https://pixabay.com/de/photos/frau-am-strand-spazieren-strand-7135489/"
+                  ),
+              },
+            ]
+          )
+        }}
         className="mb-6"
       >
         <Image
