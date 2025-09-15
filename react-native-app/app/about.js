@@ -29,14 +29,12 @@ export default function About() {
       <Text className="text-white font-bold mb-6 text-2xl">
         Sobre el proyecto
       </Text>
-
       <Text className="text-white font-bold mb-6 text-current">
         This is a simple app to show free games using React Native and Expo.
         lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis lorem
       </Text>
-
       <Text className="text-white font-bold mb-6 text-current">
         This is a simple app to show free games using React Native and Expo.
         lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
