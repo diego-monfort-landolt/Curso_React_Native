@@ -11,13 +11,11 @@ import { styled } from "nativewind";
 
 const StyledPresasable = styled(Pressable);
 
-
 export default function GameCard({ g }) {
   return (
     <Link href={`/${g.slug}`}  asChild>
       <StyledPresasable className={`active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4 `}>
-        <View key={g.item} className="flex-row gap-4 ">
-         
+        <View key={g.item} className="flex-row gap-4 ">       
             <Image
               source={{ uri: g.image }}
               style={styles.image}
@@ -39,12 +37,7 @@ export default function GameCard({ g }) {
               </Text>
             </View>
           </View>
-       
-
       </StyledPresasable>
-
-
-
     </Link>
 
   )
