@@ -26,13 +26,13 @@ export default function GameCard({ g }) {
               <Text className="text-base font-bold text-white mb-1" numberOfLines={1}>
                 {g.title}
               </Text>
-              <Text className="text-sm text-white mb-2  max-w-[220px] break-words" style={styles.title} numberOfLines={5}>
+              <Text className="text-sm text-white mb-3  max-w-[220px] break-words" style={styles.title} numberOfLines={5}>
                 {g.description.slice(0, 50)}...
               </Text>
-              <Text className="text-xs text-gray-400 mb-1" numberOfLines={1}>
+              <Text className="text-xs text-gray-400 mb-4" numberOfLines={1}>
                 {g.slug}
               </Text>
-              <Text className="text-xs text-gray-500" numberOfLines={1}>
+              <Text className="text-xs text-gray-300" numberOfLines={1}>
                 {g.releaseDate}
               </Text>
             </View>
