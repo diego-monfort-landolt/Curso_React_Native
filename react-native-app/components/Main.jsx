@@ -17,15 +17,12 @@ export default function Main({ g }) {
     getLatestGames().then((data) => setGame(data))
   }, [])
 
-
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <Link href='/about' asChild>
         <StyledPresasable className={`active:opacity-50 absolute left-4 bg-black/60 p-2 rounded-lg mt-10 mb-6 `}>
          <InfoIcon />
-        </StyledPresasable>
-         
-        
+        </StyledPresasable>    
       </Link>
       {/* <View style={{ height: 20, margin: 2 }}>
         <View className="absolute top-5 left-4 bg-black/60 p-2 rounded-lg ">
