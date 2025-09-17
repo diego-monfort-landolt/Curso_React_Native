@@ -11,9 +11,9 @@ import { styled } from "nativewind";
 
 const StyledPresasable = styled(Pressable);
 
-export default function GameCard({ g }) {
+export default function GameCard({ g, item }) {
   return (
-    <Link href={`/${g.slug}`}  asChild>
+    <Link href={`/${g.game_url}`}  asChild>
       <StyledPresasable className={`active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4 `}>
         <View key={g.slug} className="flex-row gap-4 ">       
             <Image
