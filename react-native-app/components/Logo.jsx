@@ -96,6 +96,5 @@ const Logo = (props) => (
       />
     </G>
   </Svg>
-
 )
 export default Logo

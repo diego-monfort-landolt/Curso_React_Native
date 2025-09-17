@@ -20,7 +20,16 @@ export default function About() {
     <ScrollView>
       <Link className="text-xl mt-24 text-blue-500" href="/" asChild>
         <StyledPresasable
-          className={`opacity-90 data-[active=true]:opacity-3  border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4 w-20 justify-center flex-shrink items-center`}
+          className={`
+            opacity-90 data-[active=true]:opacity-3  
+            border border-black active:border-white/50 mb-2
+             bg-gray-500/10 
+             rounded-xl 
+             p-4 
+             w-20 
+             justify-center 
+             flex-shrink 
+             items-center`}
         >
           <HomeIcon />
         </StyledPresasable>

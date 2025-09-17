@@ -39,7 +39,6 @@ export default function GameCard({ g }) {
           </View>
       </StyledPresasable>
     </Link>
-
   )
 };
 
