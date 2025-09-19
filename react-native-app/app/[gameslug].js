@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import { Link } from "expo-router";
 import { useLocalSearchParams } from "expo-router";
 
-
 export default function Detail(){
   const { gameslug } = useLocalSearchParams();
   return (
